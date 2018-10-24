@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: hello-world
+
+test:
+  map:
+    key:
+      key2:
+        property: "i should be an int" # binding should fail because i'm expecting an int but providing a String
+        property2:
+          property: "i should be an int too" # likewise
+
