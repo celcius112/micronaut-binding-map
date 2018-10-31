@@ -15,7 +15,7 @@ class PropertiesTest {
     @Test
     void test() {
         assertThat(properties.getMap())
-                .extracting(e -> e.get("key"))
-                .isNull(); // this should not be null, it should instead be an object
+                .extracting(e -> e.get("key").get("key2.property")) // that's a weird property name 🤔 😅
+                .isEqualTo("i should be an int"); // test fails because a String cannot be cast to hello.world.MyProperties$Value
     }
 }
